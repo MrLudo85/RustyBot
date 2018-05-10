@@ -51,7 +51,7 @@ bot.on('message', message => {
 bot.on("message", message => {
 
     if (command === "ping") {
-        message.channel.send(`pong ! voici votre ping : ${Date.now() - message.createdTimestamp} ms`);
+        message.channel.send(`pong ! voici votre ping : message.createdTimestamp ms`);
     }
     
     if (command === "say") {
