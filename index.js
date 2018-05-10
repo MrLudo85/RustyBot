@@ -27,7 +27,7 @@ bot.on('message', message => {
 
 bot.on('message', message => {
 
-    if (command === prefix + "aide") {
+    if (command === "aide") {
 
         var aideEmbed = new Discord.RichEmbed()
         .setTitle(":book: Voici la page d'aide du bot")
@@ -50,11 +50,11 @@ bot.on('message', message => {
 
 bot.on("message", message => {
 
-    if (command === prefix + "ping") {
+    if (command === "ping") {
         message.channel.send(`pong ! voici votre ping : ${Date.now() - message.createdTimestamp} ms`);
     }
     
-    if (command === prefix + "say") {
+    if (command === "say") {
         message.delete()
         const embed = new Discord.RichEmbed()
         .setColor("#FF0105")
