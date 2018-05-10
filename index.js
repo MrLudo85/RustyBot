@@ -52,7 +52,7 @@ bot.on("message", message => {
 
     if (command === prefix + "ping") {
         message.channel.send(`pong ! voici votre ping : ${Date.now() - message.createdTimestamp} ms`);
-    } else
+    }
     
     if (command === prefix + "say") {
         message.delete()
@@ -60,6 +60,6 @@ bot.on("message", message => {
         .setColor("#FF0105")
         .setDescription("" + message.author.username + " says: " + args.join(" "))
         message.channel.send({embed})
-    } else
+    }
 
 })
