@@ -119,7 +119,7 @@ bot.on('message', message => {
 
 
             if (isNaN(args[0])) {
-                message.channel.send('mettez un entre __***0 et 99***__ \n Usage:' prefix + 'purge <nombres>');
+                message.channel.send("mettez un nombre entre 0 et 99 \n Usage:" prefix + "clear <nombres>");
 
                 return;
             }
