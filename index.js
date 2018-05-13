@@ -106,30 +106,4 @@ bot.on('message', message => {
     }else if (message.content === prefix + "avatar") {
         message.reply(message.author.avatarURL);
     }
-
-    if (message.content === prefix + 'clear') {
-
-        async function purge() {
-            message.delete();
-
-            if (!message.member.roles.find("name", "bot-commander")) {
-                message.channel.send('You need the \`bot-commander\` role to use this command.');
-                return;
-            }
-
-
-            if (isNaN(args[0])) {
-                message.channel.send("mettez un nombre entre 0 et 99 \n Usage:" prefix + "clear <nombres>");
-
-                return;
-            }
-            const fetched = await message.channel.fetchMessages({limit: args[0]});
-            console.log(fetched.size + 'on été suprimer');
-
-            message.channel.bulkDelete(fetched)
-                .catch(error => message.channel.send(`Error: ${error}`));
-        }
-        purge();
-    }
-
 });
