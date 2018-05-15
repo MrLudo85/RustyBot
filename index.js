@@ -147,9 +147,9 @@ bot.on('message', message => {
 }}});
 
 bot.on("guildMemberAdd", member => {
-    member.guild.channels.find("name", "dιѕcυѕѕιoɴ").send(`Bienvenue ${member.user} sur ${message.guild.name} n'oublie pas de lire le reglement`)
+    member.guild.channels.find("name", "dιѕcυѕѕιoɴ").send(`Bienvenue ${member.user} sur le serveur n'oublie pas de lire le reglement`)
 })
 
 bot.on("guildMemberRemove", member => {
-    member.guild.channels.find("name", "dιѕcυѕѕιoɴ").send(`dommage ${member.user} viens de quittée ${message.guild.name}`)
+    member.guild.channels.find("name", "dιѕcυѕѕιoɴ").send(`dommage ${member.user} viens de quittée le serveur`)
 })
