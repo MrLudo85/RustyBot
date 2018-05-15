@@ -146,10 +146,4 @@ bot.on('message', message => {
                         }, function(err){message.channel.send("Erreur")})};
 }}});
 
-bot.on("guildMemberAdd", member => {
-    member.guild.channels.find("name", "dιѕcυѕѕιoɴ").send(`Bienvenue ${member.user} sur le serveur n'oublie pas de lire le reglement`)
-})
 
-bot.on("guildMemberRemove", member => {
-    member.guild.channels.find("name", "dιѕcυѕѕιoɴ").send(`dommage ${member.user} viens de quittée le serveur`)
-})
