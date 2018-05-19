@@ -105,7 +105,7 @@ bot.on('message', message => {
 
         var embedavatar = new Discord.RichEmbed()
         .setAuthor(`${user.username}`)
-        .addField(`voici le logo de`, `${$user.username}`)
+        .addField(`voici le logo de`, `${user.username}`)
         .setImage(user.displayAvatarURL)
         .setColor("#FF0105")
         message.channel.send(embedavatar)
