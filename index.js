@@ -58,7 +58,7 @@ bot.on('message', message => {
         message.author.send(embed);
         message.reply("Regarde tes message privée, tu vien de recevoir les lien de l'hebergeur")
     }else if (message.content.startsWith(prefix + "say")){
-        message.delete(1);
+        message.delete()
         var embed = new Discord.RichEmbed()
             .setColor("#FF0105")
             .setDescription(message.author.username + " dit : " + message.content.substr(prefix.length + 4))
