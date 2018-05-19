@@ -41,7 +41,7 @@ bot.on('message', message => {
         .addField("%support", "Donne le lien du support du bot")
         .addField("%site", "Donne le lien du site internet du fondateur")
         .addField("%hebergeur", "Donne des informations sur l'hébergeur du Bot")
-        .addField("%stats", "Donne les statistiques de l'utilisateur")
+        .addField("%statistiques", "Donne les statistiques de l'utilisateur")
         .addField("%say", "Permet de répéter un message précis")
         .addField("%avatar", "Affiche l'avatar d'un utilisateur")
         .addField("%vcs", "Permer de discuter dans un chat disponible sur tout les sserveur du bot")
