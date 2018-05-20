@@ -139,5 +139,21 @@ bot.on('message', message => {
           .addField("Ping de l'utilisateur", `${message.createdTimestamp - Date.now()}` + ' ms`')
           .addField("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬", "*---*")
           message.channel.send(embedping)
-        }
+      }
+        
+      if (message.content === prefix + "info") {
+        var embedinfo = new Discord.RichEmbed()
+        .setTitle(`Page d'aide du ${bot.user.username}`)
+        .setColor("#FF0105")
+        .addField("Langage de programmation", "JavaSkript")
+        .addField("IDE", "Visual studio code 2017")
+        .addField("Hebergeur", "VPS de Heroku")
+        .addField("Creation du bot", "12 avril 2018")
+        .addField("Version", "Beta 1.0")
+        .addField("Createur", "๖̶̶̶ζ͜͡Yazhgar#1716")
+        .addField("Serveur possedant le bot", `${bot.guild.size} serveurs`)
+        .addField("Support du bot", "%support")
+        .setFooter("Rusty Bot | info")
+        message.channel.send(embedinfo)
+    }
 });
