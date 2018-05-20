@@ -151,7 +151,6 @@ bot.on('message', message => {
         .addField("Creation du bot", "12 avril 2018")
         .addField("Version", "Beta 1.0")
         .addField("Createur", "๖̶̶̶ζ͜͡Yazhgar#1716")
-        .addField("Serveur possedant le bot", `${bot.guild.size} serveurs`)
         .addField("Support du bot", "%support")
         .setFooter("Rusty Bot | info")
         message.channel.send(embedinfo)
