@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 
 var prefix = ("%")
 
-bot.login("NDQ0MTI4NzY4MDE0MDI0NzI1.DdXecQ.Q4hlUKvZnpBDRghE33zu4bHfR0Y");
+bot.login("process.env.TOKEN");
 
 
 bot.on('ready', function() {
