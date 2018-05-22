@@ -101,7 +101,7 @@ bot.on('message', message => {
         var embedlist = new Discord.RichEmbed() 
         .setTitle("serverlist")
         .addField(`nombre de serveur sur lequel je suis`, `${bot.guilds.size}`)
-        .addField("voici la list", bot.guilds.map(r => r.name + ` | **${r.memberCount}** membres))
+        .addField("voici la list", bot.guilds.map(r => r.name + `| **${r.memberCount}** membres`))
         message.cahnnel.send(embedlist) 
     } 
         
