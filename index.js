@@ -97,8 +97,16 @@ bot.on('message', message => {
         message.reply("regarde tes message privée tu vien de recevoir tes statistiques")
         message.author.send({embed: stats_embed})
     }else if (message.content === prefix + "serverlist") {
-        message.channel.send(`le nombre de serveur ou je suis : ${bot.guilds.size} \ `bot.guilds.map(r => r.name + ` | **${r.memberCount}** membres`))
-    }
+        
+        var embedlist = new Discord.RichEmbed() 
+        .setTitle("serverlist")
+        .addField(`nombre de serveur sur lequel je suis`, `${bot.guilds.size}`)
+        .addField("voici la list", bot.guilds.map(r => r.name + ` | **${r.memberCount}** membres))
+        message.cahnnel.send(embedlist) 
+    } 
+        
+
+
 
     if (message.content === prefix + "avatar") {
         var user = message.mentions.users.first() || message.author;
