@@ -41,9 +41,9 @@ bot.on('message', message => {
         .addField("%support", "Donne le lien du support du bot")
         .addField("%site", "Donne le lien du site internet du fondateur")
         .addField("%hebergeur", "Donne des informations sur l'hébergeur du Bot")
-        .addField("%stats", "Donne les statistiques de l'utilisateur")
+        .addField("%statistiques", "Donne les statistiques de l'utilisateur")
         .addField("%say", "Permet de répéter un message précis")
-        .addField("%avatar", "Affiche l'avatar d'un utilisateur")
+        .addField("%avatar", "Affiche l'avatar d'un utilisateur(ne marche plus)") 
         .addField("%vcs", "Permer de discuter dans un chat disponible sur tout les sserveur du bot")
         .setFooter("RustyBot | aides")
         message.reply("regarde tes messsage privée")
@@ -97,7 +97,7 @@ bot.on('message', message => {
         message.reply("regarde tes message privée tu vien de recevoir tes statistiques")
         message.author.send({embed: stats_embed})
     }else if (message.content === prefix + "serverlist") {
-        message.channel.send(bot.guilds.map(r => r.name + ` | **${r.memberCount}** membres`))
+        message.channel.send(`le nombre de serveur ou je suis : ${bot.guilds.size} \ `bot.guilds.map(r => r.name + ` | **${r.memberCount}** membres`))
     }
 
     if (message.content === prefix + "avatar") {
