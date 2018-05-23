@@ -7,7 +7,7 @@ bot.login(process.env.TOKEN);
 
 
 bot.on('ready', function() {
-    bot.user.setActivity(`Rusty Bot | %aide | ${bot.guilds.size} serveur | en developement `, {type: "STREAMING"});
+    bot.user.setActivity(`Rusty Bot | %help | ${bot.guilds.size} serveur | en developement `, {type: "STREAMING"});
     console.log(`${bot.user.username} vien de se connecter`);
 bot.on('message', message => {
     if(message.content === prefix + "serverinfo"){
