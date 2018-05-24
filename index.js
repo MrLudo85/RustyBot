@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 
 var prefix = ("%")
 
-bot.login("process.env.TOKEN");
+bot.login(process.env.TOKEN);
 
 
 bot.on('ready', function() {
@@ -138,4 +138,30 @@ bot.on('message', message => {
             .addField("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬", "*---*")
             message.channel.send(embedping)
         }
+        
+        if (message.content === prefix + "purge") {
+            if (!message.guild.member(message.author).hasPermission("MANAGE_MESSAGE")) return message.channel.send("vous n'avez pas la permission !");
+  
+            let args = mmessage.content.split(" ").slice(1);
+  
+            if (!args[0]) return message.channel.send("Tu dois preciser un nombre a supprimer !")
+            message.channel.bulkDelete(args[0]).then(() => {
+                message.channel.send(`${args[0]} message on été suprimmer !`);
+            }
+        )
+        }
+          
+        if (message.cotent === prefix + "statsbot") {
+            var embedstats = new Discord.RichEmbed()
+            .setTitle("**Bot Statistiques")
+            .setDescription("-=-=-=-=-=-=-=-=-=-")
+            .addField("servers", bot.servers.length)
+            .addField("users", bot.users.length)
+            message.channel.send(embedstats)
+        }
+
+        
+        if (message.content === prefix + "serverlist") {
+            message.channel.send(bot.guilds.map(r => r.name + ` | **${r.memberCount}** membres`))
+        }    
 });
