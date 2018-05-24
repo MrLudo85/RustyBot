@@ -141,15 +141,6 @@ bot.on('message', message => {
           message.channel.send(embedping)
       }
 
-      if (message.cotent === prefix + "statsbot") {
-        var embedstats === new Discord.RichEmbed()
-        .setTitle("**Bot Statistiques")
-        .setDescription("-=-=-=-=-=-=-=-=-=-")
-        .addField("servers", bot.servers.length)
-        .addField("users", bot.users.length)
-        message.channel.send(embedstats)
-      }
-
       if (message.content === prefix + "purge") {
           if (!message.guild.member(message.author).hasPermission("MANAGE_MESSAGE")) return message.channel.send("vous n'avez pas la permission !");
 
