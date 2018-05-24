@@ -142,7 +142,7 @@ bot.on('message', message => {
         if (message.content === prefix + "purge") {
             if (!message.guild.member(message.author).hasPermission("MANAGE_MESSAGE")) return message.channel.send("vous n'avez pas la permission !");
   
-            let args = mmessage.content.split(" ").slice(1);
+            let args = message.content.split(" ").slice(1);
   
             if (!args[0]) return message.channel.send("Tu dois preciser un nombre a supprimer !")
             message.channel.bulkDelete(args[0]).then(() => {
