@@ -138,25 +138,5 @@ bot.on("message",message => {
         .addField("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬", "*---*")
         message.channel.send(embedping)
     }
-
-    if (message.content === prefix + "8ball")
-    var args = message.content.split(" ").slice(1);
-    var tte = args.join(" ")
-    if (!tte){
-        return message.reply("merci de poser une question :8ball:")};
-
-        var replys = [
-            "oui",
-            "non",
-            "je sais pas",
-            "peut etre",
-        ];
-
-        var reponse = (replys[Math.floor(Math.random() * replys.lenght)])
-        var embed8ball = new Discord.RichEmbed()
-        .setDescription(":8ball: 8ball")
-        .addField("Question", tte)
-        .addField("Reponse", reponse)
-    message.channel.sendEmbed(embed8ball)
 });
 
