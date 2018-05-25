@@ -140,8 +140,8 @@ bot.on("message",message => {
     }
 
     if (message.content === prefix + "8ball")
-    let args = message.content.split(" ").slice(1);
-    let tte = args.join(" ")
+    var args = message.content.split(" ").slice(1);
+    var tte = args.join(" ")
     if (!tte){
         return message.reply("merci de poser une question :8ball:")};
 
@@ -152,7 +152,7 @@ bot.on("message",message => {
             "peut etre",
         ];
 
-        let reponse = (replys[Math.floor(Math.random() * replys.lenght)])
+        var reponse = (replys[Math.floor(Math.random() * replys.lenght)])
         var embed8ball = new Discord.RichEmbed()
         .setDescription(":8ball: 8ball")
         .addField("Question", tte)
