@@ -61,7 +61,7 @@ bot.on('message', message => {
         message.delete(1);
         var embed = new Discord.RichEmbed()
             .setColor("#FF0105")
-            .setDescription(message.author.username + " dit : " + message.content.substr(prefix.length + 4))
+            .setDescription(message.content.substr(prefix.length + 4))
         message.channel.send(embed)
     }else if (message.content === prefix + "invite"){
         var embedinvite = new Discord.RichEmbed()
