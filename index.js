@@ -57,9 +57,9 @@ bot.on('message', message => {
         .addField("%warn", "permet de warn un utilisateur(soon)")
         .addField("%mute", "permet de mute un utilisateur(soon)")
         .setFooter("RustyBot | modhelp")
-        message.channel.send("•••Regarde tes message privée•••")
-        message.author.send({embedmodhelp})
-    }
+        message.reply("•••Regarde tes message privée•••")
+        message.author.send(embedmodhelp)
+    
     
     if (message.content === prefix + "hebergeur"){
         var embed = new Discord.RichEmbed()
