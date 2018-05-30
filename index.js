@@ -110,38 +110,11 @@ bot.on('message', message => {
         message.reply("regarde tes message privée tu vien de recevoir tes statistiques")
         message.author.send({embed: stats_embed})
     }
-
-    if (message.content === prefix + "avatar") {
-        var user = message.mentions.users.first() || message.author;
-
-        var embedavatar = new Discord.RichEmbed()
-        .setAuthor(`${user.username}`)
-        .addField(`voici le logo de ${$user.username}`)
-        .setImage(user.displayAvatarURL)
-        .setColor("#FF0105")
-        message.channel.send(embedavatar)
-    }})});
-
-bot.on("message",message => {
-    var prefix = "%"
-    if(message.content === prefix + "vcs") {
-        message.delete()
-        var xo03 = message.content.split(" ").slice(1).join(" ");
-        var xo02 = message.guild.channels.find('name', 'vcs-rusty');
-        if(message.channel.name == "vcs-rusty"){
-            var embedvcs = new Discord.RichEmbed()
-            .setColor("#FF0105")
-            .addField("• VCS-RustyBot •", message.author.username)
-            .addField("• Provenant du serveur •", message.guild.name)
-            .addField("• ▬▬▬▬▬▬▬▬▬▬▬▬ •", xo03)
-            .setFooter("RustyBot | vcs")
-            .setThumbnail(message.guild.iconURL)
-            .setTimestamp()
-    return bot.channels.findAll('name', 'vcs-rusty').map(a=>a.send(embedvcs))
-    }
-    return message.channel.send("Il faut écrire dans le channel vcs-rusty")
-    }
 });
+
+
+
+
 
 bot.on("message", message => {
     if (message.content === prefix + "servlist") {
