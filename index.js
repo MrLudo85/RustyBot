@@ -125,5 +125,5 @@ bot.on("message", message => {
         .addField("Voici la liste", bot.guilds.map(r => r.name + ` | **${r.memberCount}** membres`));
         message.channel.send(embedlist)
     }
-})
+})})});
 
