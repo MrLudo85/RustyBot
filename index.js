@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 
 var prefix = ("%")
 
-bot.login("NDQ0MTI4NzY4MDE0MDI0NzI1.DfQASg.LdLvhO1GeZMDA5vWoItqc_PzPxQ");
+bot.login(process.env.TOKEN);
 
 
 bot.on('ready', function() {
@@ -161,7 +161,7 @@ bot.on("message",message => {
     .setColor("#FF0105")
     .addField("• VCS-RustyBot •", message.author.username)
     .addField("• Provenant du serveur •", message.guild.name)
-    .addField("• ▬▬▬▬▬▬▬▬▬▬▬▬ •", xo03)
+    .addField("• ▬▬▬▬▬▬▬▬▬▬▬ •", xo03)
     .setFooter("RustyBot | vcs")
     .setThumbnail(message.guild.iconURL)
     .setTimestamp()
