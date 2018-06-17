@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 
 var prefix = ("%")
 
-bot.login("NDQ0MTI4NzY4MDE0MDI0NzI1.Df7fyg.AGWSR9aCRGXitfyMaIJjAJ8HqdQ");
+bot.login(process.env.TOKEN);
 
 
 bot.on('ready', function() {
@@ -211,7 +211,7 @@ bot.on('guildMemberAdd', member => {
     var embedJoin = new Discord.RichEmbed()
     .setTitle("{+} Join")
     .setColor("#FF0105")
-    .setDescription(`Bienvenue ${member} sur Rusty | support \e Souhaitez la bienvenue a ${member.user.username} qui vien d'arrivée sur le serveur ! \e Bien entendu tous serveur a des règles donc merci de respecter les regles en #reglement !`)
+    .setDescription(`Bienvenue ${member} sur Rusty | support \ Souhaitez la bienvenue a ${member.user.username} qui vien d'arrivée sur le serveur ! \ Bien entendu tous serveur a des règles donc merci de respecter les regles en #reglement !`)
     .addField("Vous voulez savoir les commande du RustyBot", "faites la commande `%help`!")
     channel.send(embedJoin);
 });
