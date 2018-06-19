@@ -49,6 +49,7 @@ bot.on('message', message => {
         .addField("▬▬▬▬▬NSFW▬▬▬▬▬", "-=-=-=-=-=-=-=-=-=--=-=-=-=-=-")
         .addField("%nsfw", "donne des image de porno aléatoirement")
         .setFooter("RustyBot | aides")
+        message.reply("regarde tes messages privés car tu vien de recevoir la page d'aide du bot") 
         message.author.send(aideEmbed);
     }
 
@@ -293,7 +294,12 @@ bot.on("message", message => {
 
     if (message.content.startsWith(prefix + "fight")) {
         message.delete();
-        if(!message.mentions.users.first()) {
+        let member = message.mentions.members.first();
+
+
+
+
+ 
           return message.channel.send(":tools: **Comment utiliser ma commande =>** ```/fight <@utilisateur>``` ")}
           let urlList2 = [
             'https://cdn.discordapp.com/attachments/444172474373111818/454967574636003338/fight_8.gif',
@@ -311,7 +317,7 @@ bot.on("message", message => {
           let randomUrl2 = (urlList2[Math.floor(Math.random() * urlList2.length)])
           var fight_embed = new Discord.RichEmbed()
           .setColor("#339999")
-          .setTitle("Combat de " + message.author.tag + message.mentions.users.first())
+          .setTitle("Combat de " + message.author.tag + member.tag)
           .setImage(randomUrl2)
           .setFooter("RustyBot | Fight")
           message.channel.send(fight_embed).catch();  
