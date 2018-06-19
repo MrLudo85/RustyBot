@@ -300,7 +300,7 @@ bot.on("message", message => {
 
 
  
-          return message.channel.send(":tools: **Comment utiliser ma commande =>** ```/fight <@utilisateur>``` ")}
+          return message.channel.send(":tools: **Comment utiliser ma commande =>** ```/fight <@utilisateur>``` ")
           let urlList2 = [
             'https://cdn.discordapp.com/attachments/444172474373111818/454967574636003338/fight_8.gif',
             'https://cdn.discordapp.com/attachments/444172474373111818/454967612775071744/fight_3.gif',
