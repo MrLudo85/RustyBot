@@ -49,7 +49,7 @@ bot.on('message', message => {
         .addField("▬▬▬▬▬NSFW▬▬▬▬▬", "-=-=-=-=-=-=-=-=-=--=-=-=-=-=-")
         .addField("%nsfw", "donne des image de porno aléatoirement")
         .setFooter("RustyBot | aides")
-        message.channel.send(aideEmbed);
+        message.author.send(aideEmbed);
     }
 
     if (message.content === prefix + "hhelp"){
