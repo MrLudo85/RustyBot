@@ -87,6 +87,7 @@ bot.on('message', message => {
         .addField("%ban", "permet de bannir un utilisateur")
         .addField("%kick", "permet de kick un utilisateur")
         .addField("%warn", "permet de warn un utilisateur")
+        .addField("%purge", "Permet de suprimé des message entre 1 et 100")
         .setFooter("RustyBot | modhelp")
         message.reply("•••Regarde tes message privée•••")
         message.author.send(embedmodhelp)
