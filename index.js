@@ -291,37 +291,39 @@ bot.on("message", message => {
     .setFooter("Requête de  "  +  message.author.tag)
     message.guild.channels.find('name', 'nsfw').send(nsfw_embed)
     }
-
-    if (message.content.startsWith(prefix + "fight")) {
-        message.delete();
-        let member = message.mentions.members.first();
-
-
-
-
- 
-          return message.channel.send(":tools: **Comment utiliser ma commande =>** ```/fight <@utilisateur>``` ")
-          let urlList2 = [
-            'https://cdn.discordapp.com/attachments/444172474373111818/454967574636003338/fight_8.gif',
-            'https://cdn.discordapp.com/attachments/444172474373111818/454967612775071744/fight_3.gif',
-            'https://cdn.discordapp.com/attachments/444172474373111818/454967637567471616/fight1.gif',
-            'https://cdn.discordapp.com/attachments/444172474373111818/454967690419765249/fight_9.gif',
-            'https://cdn.discordapp.com/attachments/444172474373111818/454967726331527178/fight_6.gif',
-            'https://cdn.discordapp.com/attachments/444172474373111818/454967768647860224/fight_7.gif',
-            'https://cdn.discordapp.com/attachments/444172474373111818/454967804387655683/fight_10.gif',
-            'https://cdn.discordapp.com/attachments/444172474373111818/454967819117920256/fight_5.gif',
-            'https://cdn.discordapp.com/attachments/444172474373111818/454967742357831700/fight_2.gif',
-            'https://cdn.discordapp.com/attachments/444172474373111818/454967724024528906/fight_4.gif',
-          ];
     
-          let randomUrl2 = (urlList2[Math.floor(Math.random() * urlList2.length)])
-          var fight_embed = new Discord.RichEmbed()
-          .setColor("#339999")
-          .setTitle("Combat de " + message.author.tag + member.tag)
-          .setImage(randomUrl2)
-          .setFooter("RustyBot | Fight")
-          message.channel.send(fight_embed).catch();  
+    if (message.content.startsWith(prefix + "fight")) {
+message.delete();
+let members = message.mentions.users.first();
+if (!members) return message.channel.send(`🛠 **Comment utiliser ma commande =>** \`/fight <@utilisateur>\``);
+let urlList2 = [
+  'https://cdn.discordapp.com/attachments/444172474373111818/454967574636003338/fight_8.gif',
+  'https://cdn.discordapp.com/attachments/444172474373111818/454967612775071744/fight_3.gif',
+  'https://cdn.discordapp.com/attachments/444172474373111818/454967637567471616/fight1.gif',
+  'https://cdn.discordapp.com/attachments/444172474373111818/454967690419765249/fight_9.gif',
+  'https://cdn.discordapp.com/attachments/444172474373111818/454967726331527178/fight_6.gif',
+  'https://cdn.discordapp.com/attachments/444172474373111818/454967768647860224/fight_7.gif',
+  'https://cdn.discordapp.com/attachments/444172474373111818/454967804387655683/fight_10.gif',
+  'https://cdn.discordapp.com/attachments/444172474373111818/454967819117920256/fight_5.gif',
+  'https://cdn.discordapp.com/attachments/444172474373111818/454967742357831700/fight_2.gif',
+  'https://cdn.discordapp.com/attachments/444172474373111818/454967724024528906/fight_4.gif'
+];
+let randomUrl2 = (urlList2[Math.floor(Math.random() * urlList2.length)]);
+message.channel.send({
+  embed: {
+    title: `Combat de ${message.author.tag} & ${members.tag}`,
+    image: {
+      url: randomUrl2
+    },
+    footer: {
+      text: `RustyBot | Fight`
     }
+  }
+})
+}
+ 
+
+    
 
     if(message.content.startsWith(prefix + "cat")) {
         message.delete();
