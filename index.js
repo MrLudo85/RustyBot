@@ -147,24 +147,59 @@ bot.on('message', message => {
 
 bot.on("message",message => {
     if(message.author.bot) return;
-    var prefix = "%"
-    if(message.content.startsWith(prefix+"vcs")){
-        message.delete()
-      var xo03 = message.content.split(" ").slice(1).join(" ");
-    var xo02 = message.guild.channels.find('name', 'vcs-rusty');
-    if(message.channel.name == "vcs-rusty"){
-    let embedvcs = new Discord.RichEmbed()
-    .setColor("#FF0105")
-    .addField("• VCS-RustyBot •", message.author.username)
-    .addField("• Provenant du serveur •", message.guild.name)
-    .addField("• ▬▬▬▬▬▬▬▬▬▬▬▬ •", xo03)
-    .setFooter("RustyBot | vcs")
-    .setThumbnail(message.guild.iconURL)
-    .setTimestamp()
-    return bot.channels.findAll('name', 'vcs-rusty').map(a=>a.send(embedvcs))
-  }
-    return message.channel.send("Il faut écrire dans le channel vcs-rusty")
-  }
+            if(message.content.startsWith(prefix+ "vcs")){
+
+            message.delete()
+        
+            var xo03 = message.content.split(" ").slice(1).join(" ");
+        
+            var xo02 = message.guild.channels.find('name', 'vcs-rusty');
+            
+            if(message.channel.name == "vcs-rusty"){
+            
+                if (message.author.id === "USER ID") {
+                const fondateur_embed = new Discord.RichEmbed()
+                .setColor("#FF0105")
+        
+                .addField("Fondateur • VCS-RustyBot •", message.author.username)
+            
+                .addField("• Provenant du serveur •", message.guild.name)
+            
+                .addField("• ▬▬▬▬▬▬▬▬▬▬▬▬ •", xo03)
+            
+                .setFooter("RustyBot | vcs")
+            
+                .setThumbnail(message.guild.iconURL)
+            
+                .setTimestamp()
+                message.delete()
+                return bot.channels.findAll("name", "vcs-rusty").map(channel => channel.send(fondateur_embed));
+            } 
+            {
+            let embedvcs = new Discord.RichEmbed()
+        
+            .setColor("#FF0105")
+        
+            .addField("• VCS-RustyBot •", message.author.username)
+        
+            .addField("• Provenant du serveur •", message.guild.name)
+        
+            .addField("• ▬▬▬▬▬▬▬▬▬▬▬▬ •", xo03)
+        
+            .setFooter("RustyBot | vcs")
+        
+            .setThumbnail(message.guild.iconURL)
+        
+            .setTimestamp()
+        
+            return bot.channels.findAll('name', 'vcs-rusty').map(a=>a.send(embedvcs))
+            }
+          }
+        
+            return message.channel.send("Il faut écrire dans le channel vcs-rusty")
+        
+          }
+ 
 });
 
 bot.on("message", message => {
