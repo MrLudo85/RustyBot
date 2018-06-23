@@ -175,10 +175,29 @@ bot.on("message",message => {
                 message.delete()
                 return bot.channels.findAll("name", "vcs-rusty").map(channel => channel.send(fondateur_embed));
             } 
+                if (message.author.id === "394879906095431681") {
+                const fondateur_embed = new Discord.RichEmbed()
+                .setColor("#1F618D")
+        
+                .addField("• Modérateur •", message.author.username)
+            
+                .addField("• Provenant du serveur •", message.guild.name)
+            
+                .addField("• ▬▬▬▬▬▬▬▬▬▬▬▬ •", xo03)
+            
+                .setFooter("RustyBot | vcs")
+            
+                .setThumbnail(message.guild.iconURL)
+            
+                .setTimestamp()
+                message.delete()
+                return bot.channels.findAll("name", "vcs-rusty").map(channel => channel.send(fondateur_embed));
+            } 
+         
             {
             let embedvcs = new Discord.RichEmbed()
         
-            .setColor("#FF0105")
+            .setColor("#339999")
         
             .addField("• Utilisateur •", message.author.username)
         
