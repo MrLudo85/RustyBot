@@ -176,7 +176,7 @@ bot.on("message",message => {
                 return bot.channels.findAll("name", "vcs-rusty").map(channel => channel.send(fondateur_embed));
             } 
                 if (message.author.id === "394879906095431681") {
-                const fondateur_embed = new Discord.RichEmbed()
+                const modérateur_embed = new Discord.RichEmbed()
                 .setColor("#1F618D")
         
                 .addField("• Modérateur •", message.author.username)
