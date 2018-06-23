@@ -157,11 +157,11 @@ bot.on("message",message => {
             
             if(message.channel.name == "vcs-rusty"){
             
-                if (message.author.id === "USER ID") {
+                if (message.author.id === "373616425727819776") {
                 const fondateur_embed = new Discord.RichEmbed()
                 .setColor("#FF0105")
         
-                .addField("Fondateur • VCS-RustyBot •", message.author.username)
+                .addField("• Fondateur •", message.author.username)
             
                 .addField("• Provenant du serveur •", message.guild.name)
             
@@ -180,7 +180,7 @@ bot.on("message",message => {
         
             .setColor("#FF0105")
         
-            .addField("• VCS-RustyBot •", message.author.username)
+            .addField("• Utilisateur •", message.author.username)
         
             .addField("• Provenant du serveur •", message.guild.name)
         
