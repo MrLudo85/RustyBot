@@ -7,9 +7,11 @@ bot.login(process.env.TOKEN);
 
 
 bot.on('ready', function() {
+
     bot.user.setActivity(`%help | ${bot.guilds.size} serveur | ${bot.users.size} joueur `, {type: "STREAMING"});
     console.log(`${bot.user.username} vien de se connecter`);
 bot.on('message', message => {
+    if(message.author.bot) return;
     if(message.content === prefix + "serverinfo"){
         var serverinfo = new Discord.RichEmbed()
         .setDescription("Infomations du serveur")
@@ -144,6 +146,7 @@ bot.on('message', message => {
 });
 
 bot.on("message",message => {
+    if(message.author.bot) return;
     var prefix = "%"
     if(message.content.startsWith(prefix+"vcs")){
         message.delete()
@@ -165,6 +168,7 @@ bot.on("message",message => {
 });
 
 bot.on("message", message => {
+    if(message.author.bot) return;
     if (message.content === prefix + "servlist") {      
         var embedlist = new Discord.RichEmbed()
         .setColor("#FF0105")
@@ -225,6 +229,7 @@ bot.on('guildMemberRemove', member => {
 })
 
 bot.on("message", message => {
+    if(message.author.bot) return;
     if(message.content.startsWith(prefix + "8ball")) {
         message.delete();
         var args = message.content.substr(6)
@@ -447,6 +452,7 @@ bot.on("message", message => {
       message.channel.send(clear_embed).then(msg => {msg.delete(5000)});
 })}})});
 bot.on("message", message => {
+    if(message.author.bot) return;
     if(message.content.startsWith(prefix + 'warn')){
         message.delete();
          var botrole = message.guild.member(bot.user).hasPermission("KICK_MEMBERS");
@@ -594,6 +600,7 @@ bot.on("message", message => {
 }});
 
 bot.on("message", message => {
+    if(message.author.bot) return;
     if (message.content.startsWith(prefix + "unmute")) {
         if (message.channel.type === "dm") return;
         if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return message.reply("**:x: Vous n'avez pas la permission `Gérer le serveur` dans ce serveur**").catch(console.error);
@@ -613,6 +620,7 @@ bot.on("message", message => {
 }});
 
 bot.on("message", message => {
+    if(message.author.bot) return;
     if (message.content.startsWith(prefix + "annonce")) {
         message.delete()
         if(!message.guild) return;
