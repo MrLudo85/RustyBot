@@ -574,7 +574,7 @@ bot.on("message", message => {
             .addField("**Exclusion du joueur **", message.mentions.users.first(), true)
             .addField("**Exclusion exécutée Par **", message.author.tag, true)
             .addField("**Raison de l'exclusion : **", reason, true)
-            .setFooter("ᴄᴀᴛʙᴏᴛ | Exclusion d'un membre du serveur " + message.guild.name + ".")
+            .setFooter("RustyBot | Kick")
             message.channel.send(kick_embed).then(function (message) { message.react("❌") })
         }};
 
