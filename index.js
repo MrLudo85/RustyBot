@@ -730,72 +730,21 @@ bot.on("message", message => {
         .addField("☄Serveur en Commun", bot.guilds.filter(g => g.members.has(message.author.id)).size, true)
         message.channel.send(embed);
     }
+    
+    if (message.content.startsWith(prefix + "CstPrefix")) {
+        if (args.length < 1) {
 
-    if (message.content.startsWith(prefix + "embh")) {
-        if(!message.guild) return;
-        message.channel.send({embed: {
-            color: Math.floor(Math.random()*16777216),
-            author: {
-              name: bot.user.username,
-              icon_url: bott.user.avatarURL
-            },
-            title: "Aide sur les **embed** prefix ``+``",
-            fields: [{
-                name: "Couleur aléatoire",
-                value: "embed <message>",
-                inline: true
-              },
-              {
-                name: "🔴Rouge",
-                value: "embr <message",
-                inline: true
-              },
-              {
-                name: "🔵Bleu",
-                value: "embl <message>",
-                inline: true
-              },
-              {
-                name: "🍏Vert",
-                value: "embv <message>",
-                inline: true
-              },
-              {
-                name: "⚪Blanc",
-                value: "embb <message>",
-                inline: true
-              },
-              {
-                name: "🍊Orange",
-                value: "embo <message>",
-                inline: true
-              },
-              {
-                name: "⚫Noir",
-                value: "embn <message>",
-                inline: true
-              },
-              {
-                name: "💛Jaune",
-                value: "embj <message>",
-                inline : true
-              },
-              {
-                name: "🌑Gris",
-                value: "embg <message>",
-                inline: true
-              },
-              {
-                name: "🐷Rose",
-                value: "emb.ro <message>",
-                inline: true
-              },
-            ],
-            footer: {
-                icon_url: client.user.avatarURL,
-                text: "©️Yazguard"
-            }
-          }
-        });
-    }
+            throw "S'il vous plaît fournir un préfixe à définir!";
+    
+        }
+    
+    
+    
+        const prefix = args.join(' ');
+    
+        bot.managers.config.set('prefix', prefix);
+        
+        message.edit('Préfixe, reboot! :ok_hand:');
+    
+    };
 }});
