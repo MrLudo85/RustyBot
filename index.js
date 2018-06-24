@@ -731,20 +731,10 @@ bot.on("message", message => {
         message.channel.send(embed);
     }
     
-    if (message.content.startsWith(prefix + "CstPrefix")) {
-        if (args.length < 1) {
+    if (message.content.startsWith(prefix + "reload")) {
+        await msg.edit(':wave: Restarting. Bye!');
 
-            throw "S'il vous plaît fournir un préfixe à définir!";
-    
-        }
-    
-    
-    
-        const prefix = args.join(' ');
-    
-        bot.managers.config.set('prefix', prefix);
-        
-        message.edit('Préfixe, reboot! :ok_hand:');
-    
+    bot.shutdown(true);
+
     };
 }});
