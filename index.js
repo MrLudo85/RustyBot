@@ -732,9 +732,9 @@ bot.on("message", message => {
     }
     
     if (message.content.startsWith(prefix + "reload")) {
-        await msg.edit(':wave: Restarting. Bye!');
+        message.edit(':wave: Restarting. Bye!');
 
-    bot.shutdown(true);
+        bot.shutdown(true);
 
     };
 }});
