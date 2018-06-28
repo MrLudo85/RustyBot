@@ -789,7 +789,7 @@ let args = message.content.split(" ");
 
 if(!args[1]) return message.react("❌");
 
-client.user.setAvatar(args.slice(1).join(" "));
+bot.user.setAvatar(args.slice(1).join(" "));
   
 }
  
