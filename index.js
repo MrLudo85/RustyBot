@@ -781,7 +781,13 @@ bot.on("message", message => {
                     }
         }
 	
-if(message.content.startsWith(prefix + "setavatar")){
+
+
+ 
+
+}});
+bot.on("message", message => {
+	if(message.content.startsWith(prefix + "setavatar")){
 
 let args = message.content.split(" ");
 
@@ -792,6 +798,5 @@ if(!args[1]) return message.react("❌");
 bot.user.setAvatar(args.slice(1).join(" "));
   
 }
- 
 
-}});
+});
