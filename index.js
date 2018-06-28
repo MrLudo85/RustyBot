@@ -801,4 +801,4 @@ bot.on("message", message => {
                         return message.reply("Tu n'est pas **l'Owner**")
                     }
 
-})
+}});
