@@ -740,7 +740,7 @@ bot.on("message", message => {
         
     if (message.content.startsWith(prefix + "eval")) {
             const config = require('./config.json');
-            if(message.auhor.id === "240508683455299584"){
+            if(message.auhor.id === "373616425727819776"){
                 var util = require("util");
                 let args = message.content.split(" ").slice(1); 	
                 let code = args.join(' ');
