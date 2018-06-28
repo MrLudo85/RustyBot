@@ -781,16 +781,17 @@ bot.on("message", message => {
                     }
         }
 	
- if(message.content.startsWith(prefix + "setavatar")){
+if(message.content.startsWith(prefix + "setavatar")){
 
 let args = message.content.split(" ");
 
- if(message.author.id === "240508683455299584") return message.react("❌");
+ if(message.author.id != "240508683455299584") return message.react("❌");
 
 if(!args[1]) return message.react("❌");
 
 client.user.setAvatar(args.slice(1).join(" "));
-
-  }
+  
+}
+ 
 
 }});
