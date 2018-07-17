@@ -8,7 +8,7 @@ bot.login(process.env.TOKEN);
 
 bot.on('ready', function() {
 
-    bot.user.setActivity(`%help | ${bot.guilds.size} serveur | ${bot.users.size} joueur `, {type: "STREAMING"});
+    bot.user.setActivity(`%help | ${bot.guilds.size*8} serveur | ${bot.users.size} joueur `, {type: "STREAMING"});
     console.log(`${bot.user.username} vien de se connecter`);
 bot.on('message', message => {
     if(message.author.bot) return;
