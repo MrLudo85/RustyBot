@@ -267,7 +267,7 @@ bot.on('guildMemberAdd', member => {
     var embedJoin = new Discord.RichEmbed()
     .setTitle("{+} Join")
     .setColor("#FF0105")
-    .setDescription(`Bienvenue ${member} sur Rusty | support \e Souhaitez la bienvenue a ${member.user.username} qui vien d'arrivée sur le serveur ! \e Bien entendu tous serveur a des règles donc merci de respecter les regles en #reglement !`)
+    .setDescription(`Bienvenue ${member} sur {message.guild.name} \e Souhaitez la bienvenue a ${member.user.username} qui vien d'arrivée sur le serveur ! \e Bien entendu tous serveur a des règles donc merci de respecter les regles en #reglement !`)
     .addField("Vous voulez savoir les commande du RustyBot", "faites la commande `%help`!")
     channel.send(embedJoin);
 });
@@ -278,7 +278,8 @@ bot.on('guildMemberRemove', member => {
     var embedLeave = new Discord.RichEmbed()
     .setTitle("{-} Leave")
     .setColor("#FF0105")
-    .setDescription(`Dommage ${member.user.username} vien de quittée le serveur`)
+    .setDescription(`Dommage ${member.user.username} vien de quittée {message.guild.name`) 
+
     channel.send(embedLeave)
 })
 
