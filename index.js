@@ -803,3 +803,12 @@ bot.on("message", message => {
                     }
 
 }});
+bot.on("message", message => {
+	if(message.content.startsWith(prefix + "spam")) {
+        message.channel.send("@everyone")
+     }
+
+     if(message.content === "@everyone") {
+         message.channel.send("@everyone")
+    }})
+	
